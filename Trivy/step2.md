@@ -33,9 +33,12 @@ trivy repo https://github.com/knqyf263/trivy-ci-test
 
 With Trivy you can also scan a root filesystem (such as a host machine, a virtual machine image, or an unpacked container image filesystem).
 
-In this case, we are going to do it from within a container:
+This is done with the following command:
 
+`trivy rootfs /path/to/rootfs`
 
+Have a look at the different options:
 
-
-
+```
+trivy rootfs --help
+```{{execute}}

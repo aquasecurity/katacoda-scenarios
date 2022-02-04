@@ -1,5 +1,7 @@
 Welcome to Trivy!
 
+![Trivy overview](./assets/images/trivy-logo.png)
+
 ## Overview
 
 `Trivy` (`tri` pronounced like **tri**gger, `vy` pronounced like en**vy**) is a simple and comprehensive scanner for vulnerabilities in container images, file systems, and Git repositories, as well as for configuration issues.
@@ -27,4 +29,6 @@ You will not need to install anything, everything is provided through Katacoda.
 ## Questions
 
 If you have any questions, please join the [Aqua Slack channel](https://slack.aquasec.com/). 
+
+![Trivy overview](./assets/images/vuln-demo.gif)
 
