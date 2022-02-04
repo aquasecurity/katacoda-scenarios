@@ -12,8 +12,4 @@ Make sure everything works:
 trivy --version
 ```{{execute}}
 
-If the installation did not work, please run the following script again:
 
-```
-trivy --version
-```{{execute}}
