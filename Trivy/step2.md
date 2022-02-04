@@ -15,6 +15,8 @@ You can pass in additional flags depending on your needs:
 trivy image --help
 ```{{execute}}
 
+Try it out! This is a demo environment so nothing can go wrong.
+
 
 ### Scanning files and directories
 

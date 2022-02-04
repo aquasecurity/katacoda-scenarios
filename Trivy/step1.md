@@ -1,4 +1,4 @@
-# Installation and Features
+# Installation
 
 You can find all installation options in the [documentation](https://aquasecurity.github.io/trivy/v0.23.0/getting-started/installation/).
 
