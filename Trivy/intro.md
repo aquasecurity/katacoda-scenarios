@@ -38,7 +38,7 @@ Scanning for Vulnerabilities in:
 * Root Filesystem
 * Language Specific Files
 
-Scanning for Misconfigurations in
+Scanning for Misconfigurations in:
 * Kubernetes YAML Manifests
 * Dockerfile
 * Infrastructure as Code (IaC) configuration such as Terraform

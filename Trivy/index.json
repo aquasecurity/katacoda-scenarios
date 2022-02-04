@@ -4,7 +4,11 @@
   "difficulty": "Beginner",
   "time": "10",
   "details": {
-    "assets": { "host01": [ {"file": "assets/*", "target": "/root"} ] },
+    "assets": {
+      "host01": [
+        {"file": "./assets/*", "target": "./", "chmod": "+x"}
+      ]
+    },
     "steps": [
       {
         "title": "Step 1",
