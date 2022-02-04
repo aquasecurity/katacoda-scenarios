@@ -13,7 +13,7 @@ You can scan either:
 The following command will check all IaC files in the repository at once:
 
 ```
-trivy conf ./assets/examples/misconf/mixed/configs
+trivy config ./assets/examples/misconf/mixed/configs
 ```{{execute}}
 
 Filter by the severity of the misconfiguration:
@@ -38,3 +38,8 @@ Let's scan it:
 trivy conf ./assets/examples/misconf/mixed/configs/Dockerfile
 ```{{execute}}
 
+### Scan your Terraform configuration files for misconfigurations
+
+```
+trivy conf ./assets/examples/misconf/mixed/configs/terraform
+```{{execute}}
