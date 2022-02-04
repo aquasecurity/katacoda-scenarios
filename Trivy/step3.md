@@ -4,7 +4,13 @@ Trivy provides built-in policies to detect configuration issues in Docker, Kuber
 
 ### Scan your IaC files
 
-Trivy can scan your IaC files for misconfigurations. The following command will check all IaC files in the repository at once:
+Trivy can scan your IaC files for misconfigurations. 
+
+You can scan either:
+* An entire directory with multiple different types of IaC configurations e.g. Dockerfile and Terraform
+* Specify a specific configuration file
+
+The following command will check all IaC files in the repository at once:
 
 ```
 trivy conf ./assets/examples/misconf/mixed/configs
