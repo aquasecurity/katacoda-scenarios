@@ -19,7 +19,7 @@ trivy config ./assets/examples/misconf/mixed/configs
 Filter by the severity of the misconfiguration:
 
 ```
-trivy conf --severity HIGH,CRITICAL ./assets/misconf/examples/mixed/configs
+trivy conf --severity HIGH,CRITICAL ./assets/examples/misconf/mixed/configs
 ```{{execute}}
 
 ### Scan your Dockerfile for misconfigurations
