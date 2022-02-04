@@ -30,5 +30,19 @@ You will not need to install anything, everything is provided through Katacoda.
 
 If you have any questions, please join the [Aqua Slack channel](https://slack.aquasec.com/). 
 
+## Use Cases
+
+Scanning for Vulnerabilities in:
+* Container Images
+* Git Repositories
+* Root Filesystem
+* Language Specific Files
+
+Scanning for Misconfigurations in
+* Kubernetes YAML Manifests
+* Dockerfile
+* Infrastructure as Code (IaC) configuration such as Terraform
+ 
+
 ![Trivy overview](./assets/images/vuln-demo.gif)
 

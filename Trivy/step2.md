@@ -8,7 +8,6 @@ Check a container image for vulnerabilities:
 trivy image node:17.4.0-alpine
 ```{{execute}}
 
-
 You can pass in additional flags depending on your needs:
 
 ```
@@ -23,10 +22,10 @@ Try it out! This is a demo environment so nothing can go wrong.
 Scan a local project including language-specific files:
 
 ```
-trivy fs ./assets/examples/misconf/go-testing
+trivy fs --severity HIGH,CRITICAL ./assets/examples/misconf/go-testing
 ```{{execute}}
 
-Scan Git Repository
+Scan a Git Repository:
 ```
 trivy repo https://github.com/knqyf263/trivy-ci-test
 ```{{execute}}
