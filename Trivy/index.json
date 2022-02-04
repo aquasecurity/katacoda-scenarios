@@ -6,7 +6,10 @@
   "details": {
     "assets": {
       "host01": [
-        {"file": "./assets/*", "target": "./", "chmod": "+x"}
+        {
+          "file": "*",
+          "target": "/root/"
+        }
       ]
     },
     "steps": [
