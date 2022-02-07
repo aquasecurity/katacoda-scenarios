@@ -7,7 +7,7 @@
     "assets": {
       "host01": [
         {
-          "file": "Starboard-cli/*",
+          "file": "Starboard/Starboard-cli/assets/*",
           "target": "/root/assets"
         }
       ]

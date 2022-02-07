@@ -7,7 +7,26 @@ It is a single executable binary which can be used to find risks, such as vulner
 
 You can find all installation options in the [documentation.](https://aquasecurity.github.io/starboard/v0.14.1/cli/)
 
-In our case, we will install the kubectl plugin. This is done through a tool called Krew, which is already installed. 
+In our case, we will install the kubectl plugin. This is done through a tool called Krew, which we are going to installed with the following commands:
+
+```
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+  KREW="krew-${OS}_${ARCH}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+  tar zxvf "${KREW}.tar.gz" &&
+  ./"${KREW}" install krew
+)
+```{{execute}}
+
+
+```
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+```{{execute}}
+
+Once done, we can install Starboard:
 
 ```
 kubectl krew install starboard
