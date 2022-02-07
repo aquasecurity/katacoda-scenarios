@@ -1,6 +1,6 @@
 Welcome to Trivy!
 
-![Trivy overview](./assets/images/trivy-logo.png)
+![Trivy logo](./assets/images/trivy-logo.png)
 
 ## Overview
 
