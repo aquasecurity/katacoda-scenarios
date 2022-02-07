@@ -3,15 +3,11 @@
     "description": "Different ways to use Starboard",
     "courses": [
       {
-        "pathway_id": "aquaopensource",
-        "id": "Starboard-cli",
         "course_id": "Starboard-cli",
         "title": "Starboard CLI",
         "description": "Learn how to get started with Starboard and the Starboard CLI"
       },
       {
-        "pathway_id": "aquaopensource",
-        "id": "Starboard-operator",
         "course_id": "Starboard-operator",
         "title": "Starboard Operator",
         "description": "Learn how to get started with Starboard and the Starboard Operator"

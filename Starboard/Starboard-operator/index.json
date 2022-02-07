@@ -35,6 +35,7 @@
     "uilayout": "terminal"
   },
   "backend": {
+    "port": 8080,
     "imageid": "kubernetes-cluster-running:1.18"
   }
 }
