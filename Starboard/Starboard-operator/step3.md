@@ -14,8 +14,4 @@ You should find an equal number of ciskubebenchreports:
 kubectl get ciskubebenchreports -o wide
 ```{{execute}}
 
-Notice that each CISKubeBenchReport is named after a node and is controlled by that node to inherit its life cycle:
-
-```
-kubectl tree node kind-control-plane -A
-```{{execute}}
+Notice that each CISKubeBenchReport is named after a node and is controlled by that node to inherit its life cycle. 

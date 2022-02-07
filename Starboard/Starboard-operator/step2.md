@@ -17,8 +17,10 @@ kubectl get all
 When the first ReplicaSet controlled by the nginx Deployment is created, the operator immediately detects that and creates the Kubernetes Job in the starboard-system namespace to scan the nginx:1.16 image for vulnerabilities. It also creates the Job to audit the Deployment's configuration for common pitfalls such as running the nginx container as root. We can view the job with the following command:
 
 ```
-kubectl get job -n starboard-operator
+kubectl get job -n starboard-system
 ```{{execute}}
+
+Note that you will likely not see the job when it runs and the namespace will appear as empty.
 
 Once the job is finished, it will be deleted and a vulnerability report will have been saved into the namespace of our deployment. The report will be named after the ReplicaSet of the Deployment.
 A separate VulnerabilityReport will be saved for each pod referenced in the Replicaset that is scanned.
@@ -35,7 +37,9 @@ Similarly, the operator creates a ConfigAuditReport holding the result of auditi
 kubectl get configauditreports -o wide
 ```{{execute}}
 
-The reports are attached to the nginx deployment. We can view the depencies through the following the kubectl tree plugin:
+Note that you will only see reports if the job has already ran. 
+
+The reports are attached to the nginx deployment. We can view the depencies through the kubectl tree plugin:
 
 ```
 kubectl tree deploy nginx
@@ -56,7 +60,8 @@ Try to update the deployment:
 kubectl set image deployment nginx nginx=nginx:1.17
 ```{{execute}}
 
-And look at the dependency tree again:
+And look at the reports again:
+
 ```
-kubectl tree deploy nginx
+kubectl get configauditreports -o wide
 ```{{execute}}

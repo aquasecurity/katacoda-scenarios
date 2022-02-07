@@ -35,13 +35,18 @@ kubectl krew install starboard
 Make sure that the installation was successful:
 
 ```
-kubectl starboard --version
+kubectl starboard
 ```{{execute}}
 
 Lastly, we have to run a one-time installation command. This will create a namespace for Starboard inside our cluster, which will keep our resports:
 
 ```
 kubectl starboard install
+```{{execute}}
+
+This will create a starboard namespace inside our Kubernetes cluster:
+```
+kubectl get ns
 ```{{execute}}
 
 Until we scan Kubernetes resources inside our cluster, this namespace will be empty:

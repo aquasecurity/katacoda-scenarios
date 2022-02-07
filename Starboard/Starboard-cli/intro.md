@@ -27,11 +27,14 @@ Starboard provides:
 
 ## About this scenario
 
-This scenario will show you multiple ways to use the Starboard CLI for
+This scenario will show you how to use the Starboard CLI to scan your deployments for vulnerabilities.
 
-* TODO
+We will
+* Install Krew to then install the Kubernetes Starboard kubectl-plugin
+* Deploy nginx 
+* Scan our deployment with the kubectl starbpard plugin for vulnerabilities
 
-You will not need to install anything, everything is provided through Katacoda.
+You will not need to install anything locally or from an external website, everything is provided through Katacoda.
 
 ## Resources
 

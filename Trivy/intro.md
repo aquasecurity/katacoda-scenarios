@@ -18,7 +18,7 @@ This scenario will show you multiple ways to use Trivy for
 * Scanning for vulnerabilities
 * Infrastructure as Code scans
 
-You will not need to install anything, everything is provided through Katacoda.
+You will not need to install anything locally or from an external website, everything is provided through Katacoda. However, you are encouraged to play around with with the example once the scenario is over.
 
 ## Resources
 

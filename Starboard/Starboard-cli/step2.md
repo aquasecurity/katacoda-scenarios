@@ -25,7 +25,7 @@ kubectl get all -n nginx
 Finally, we can scan our nginx deployment:
 
 ```
-starboard scan vulnerabilityreports deployment/nginx -n nginx
+kubectl starboard scan vulnerabilityreports deployment/nginx -n nginx
 ```{{execute}}
 
 
@@ -49,18 +49,18 @@ kubectl get Vulnerabilityreports -n nginx
 And then select the report that you want to display:
 ```
 kubectl get Vulnerabilityreports/{name of the report} -o yaml -n nginx
-```{{execute}}
+```{{copy}}
 
 Lastly, you could also access the report as a html page.
 
 First, save the report in an html file:
 
 ```
-starboard report deployment/nginx > nginx.deploy.html
+kubectl starboard report deployment/nginx > nginx.deploy.html
 ```{{execute}}
 
-And then open it:
+You could then open the file through:
 
 ```
 open nginx.deploy.html
-```{{execute}}
+```{{copy}}
