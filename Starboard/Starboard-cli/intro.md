@@ -1,6 +1,6 @@
 Welcome to Starboard!
 
-![Starboard Logo](./assets/images/starboard.png)
+![Starboard Logo](./images/starboard.png)
 
 In short, Starboard is a Kubernetes-native security toolkit.
 
@@ -23,7 +23,7 @@ Starboard provides:
 * Custom Resource Definitions and a Go module to work with and integrate a range of security scanners.
 * The Octant Plugin and the Lens Extension that make security reports available through familiar Kubernetes interfaces.
 
-![Starboard Overview](./assets/images/starboard-overview.png)
+![Starboard Overview](./starboard-overview.png)
 
 ## About this scenario
 
@@ -34,7 +34,7 @@ We will
 * Deploy nginx 
 * Scan our deployment with the kubectl starbpard plugin for vulnerabilities
 
-You will not need to install anything locally or from an external website, everything is provided through Katacoda.
+You will not need to install anything locally or from an external website, everything is provided through Katacoda. However, you are encouraged to play around with with the example once the scenario is over.
 
 ## Resources
 
