@@ -1,7 +1,5 @@
 Welcome to Starboard!
 
-![Starboard Logo](./images/starboard.png)
-
 In short, Starboard is a Kubernetes-native security toolkit.
 
 This tutorial will focus on using the Starboard CLI.
@@ -23,7 +21,6 @@ Starboard provides:
 * Custom Resource Definitions and a Go module to work with and integrate a range of security scanners.
 * The Octant Plugin and the Lens Extension that make security reports available through familiar Kubernetes interfaces.
 
-![Starboard Overview](./starboard-overview.png)
 
 ## About this scenario
 
@@ -46,4 +43,3 @@ You will not need to install anything locally or from an external website, every
 
 If you have any questions, please join the [Aqua Slack channel](https://slack.aquasec.com/). 
 
-![Starboard Example](./assets/images/starboard-cli.gif)

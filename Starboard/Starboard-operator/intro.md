@@ -1,7 +1,5 @@
 Welcome to Starboard!
 
-![Starboard Logo](./assets/images/starboard.png)
-
 In short, Starboard is a Kubernetes-native security toolkit.
 
 This tutorial will focus on using the Starboard Operator inside your Kubernetes Cluster.
@@ -24,8 +22,6 @@ Starboard provides:
 * Penetration test results for a Kubernetes cluster.
 * Custom Resource Definitions and a Go module to work with and integrate a range of security scanners.
 * The Octant Plugin and the Lens Extension that make security reports available through familiar Kubernetes interfaces.
-
-![Starboard Overview](./assets/images/starboard-overview.png)
 
 ## About this scenario
 

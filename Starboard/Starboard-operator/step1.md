@@ -20,7 +20,10 @@ kubectl apply -f https://raw.githubusercontent.com/aquasecurity/starboard/v0.14.
   -f https://raw.githubusercontent.com/aquasecurity/starboard/v0.14.1/deploy/static/02-starboard-operator.rbac.yaml
 ```{{execute}}
 
-(Optional) Create the starboard ConfigMap and the starboard secret in the starboard-system namespace. This will become handy when Starboard is used in combination with Trivy or Aqua Enterprise:
+
+## Customise configurations -- Optional
+
+Create the starboard ConfigMap and the starboard secret in the starboard-system namespace. This will become handy when Starboard is used in combination with Trivy or Aqua Enterprise:
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/aquasecurity/starboard/v0.14.1/deploy/static/03-starboard-operator.config.yaml
@@ -36,6 +39,8 @@ You can make any changed to the configmap through the following command:
 ```
 kubectl edit cm starboard starboard-trivy-config starboard-polaris-config -n starboard-system
 ```{{execute}}
+
+## Create the Starboard Kubernetes Operator inside the cluster
 
 Finally, create the starboard-operator Deployment in the starboard-system namespace to start the operator's pod:
 

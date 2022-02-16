@@ -36,7 +36,7 @@ The reports of your security scan are kept in the starboard namespace inside of 
 You can access the report through the following command:
 
 ```
-starboard get vulnerabilityreports deployment/nginx --container nginx -o yaml -n nginx
+kubectl starboard get vulnerabilityreports deployment/nginx --container nginx -o yaml -n nginx
 ```{{execute}}
 
 Basically, an object called Vulnerabilityreports is created inside the namespace of the deployment.
