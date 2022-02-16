@@ -37,7 +37,7 @@ Similarly, the operator creates a ConfigAuditReport holding the result of auditi
 kubectl get configauditreports -o wide
 ```{{execute}}
 
-Note that you will only see reports if the job has already ran. 
+Note that you will only see reports if the job is still in progress.
 
 The reports are attached to the nginx deployment. We can view the depencies through the kubectl tree plugin:
 
