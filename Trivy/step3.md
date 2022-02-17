@@ -14,13 +14,13 @@ The following command will check all IaC files in the repository at once:
 
 ```
 trivy config ./assets/examples/misconf/mixed/configs
-```{{execute}}
+```
 
 Filter by the severity of the misconfiguration:
 
 ```
 trivy conf --severity HIGH,CRITICAL ./assets/examples/misconf/mixed/configs
-```{{execute}}
+```
 
 ### Scan your Dockerfile for misconfigurations
 
@@ -30,16 +30,16 @@ Here is the Dockerfile that we are going to scan:
 
 ```
 cat ./assets/examples/misconf/mixed/configs/Dockerfile
-```{{execute}}
+```
 
 Let's scan it:
 
 ```
 trivy conf ./assets/examples/misconf/mixed/configs/Dockerfile
-```{{execute}}
+```
 
 ### Scan your Terraform configuration files for misconfigurations
 
 ```
 trivy conf ./assets/examples/misconf/mixed/configs/terraform
-```{{execute}}
+```
