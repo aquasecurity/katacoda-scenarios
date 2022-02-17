@@ -36,7 +36,8 @@ With Trivy you can also scan a root filesystem (such as a host machine, a virtua
 
 This is done with the following command:
 
-`trivy rootfs /path/to/rootfs`
+```trivy rootfs /path/to/rootfs`
+```
 
 Have a look at the different options:
 
