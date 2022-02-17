@@ -6,19 +6,19 @@ With the following command, we install an nginx deployment that we know has vuln
 
 ```
 kubectl create deployment nginx --image nginx:1.16
-```{{execute}}
+```
 
 Make sure nginx is installed:
 
 ```
 kubectl get all
-```{{execute}}
+```
 
 When the first ReplicaSet controlled by the nginx Deployment is created, the operator immediately detects that and creates the Kubernetes Job in the starboard-system namespace to scan the nginx:1.16 image for vulnerabilities. It also creates the Job to audit the Deployment's configuration for common pitfalls such as running the nginx container as root. We can view the job with the following command:
 
 ```
 kubectl get job -n starboard-system
-```{{execute}}
+```
 
 Note that you will likely not see the job when it runs and the namespace will appear as empty.
 
@@ -29,13 +29,13 @@ We can view the VulnerabilityReports with the following command:
 
 ```
 kubectl get vulnerabilityreports -o wide
-```{{execute}}
+```
 
 Similarly, the operator creates a ConfigAuditReport holding the result of auditing the configuration of the active ReplicaSet controlled by the nginx Deployment:
 
 ```
 kubectl get configauditreports -o wide
-```{{execute}}
+```
 
 Note that you will only see reports if the job is still in progress.
 
@@ -58,10 +58,10 @@ Try to update the deployment:
 
 ```
 kubectl set image deployment nginx nginx=nginx:1.17
-```{{execute}}
+```
 
 And look at the reports again:
 
 ```
 kubectl get configauditreports -o wide
-```{{execute}}
+```
