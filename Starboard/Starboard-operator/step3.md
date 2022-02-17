@@ -6,12 +6,12 @@ Check how many nodes are part of your cluster:
 
 ```
 kubectl get nodes
-```{{execute}}
+```
 
 You should find an equal number of ciskubebenchreports:
 
 ```
 kubectl get ciskubebenchreports -o wide
-```{{execute}}
+```
 
 Notice that each CISKubeBenchReport is named after a node and is controlled by that node to inherit its life cycle. 
