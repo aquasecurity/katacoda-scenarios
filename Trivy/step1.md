@@ -10,6 +10,4 @@ Make sure everything works:
 
 ```
 trivy --version
-```{{execute}}
-
-
+```
