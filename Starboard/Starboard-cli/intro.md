@@ -1,4 +1,4 @@
-Welcome to Starboard!
+# Welcome to Starboard!
 
 In short, Starboard is a Kubernetes-native security toolkit.
 
