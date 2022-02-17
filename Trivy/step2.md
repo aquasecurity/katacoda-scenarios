@@ -6,13 +6,13 @@ Check a container image for vulnerabilities:
 
 ```
 trivy image node:17.4.0-alpine
-```{{execute}}
+```
 
 You can pass in additional flags depending on your needs:
 
 ```
 trivy image --help
-```{{execute}}
+```
 
 Try it out! This is a demo environment so nothing can go wrong.
 
@@ -23,12 +23,12 @@ Scan a local project including language-specific files:
 
 ```
 trivy fs --severity HIGH,CRITICAL ./assets/examples/misconf/go-testing
-```{{execute}}
+```
 
 Scan a Git Repository:
 ```
 trivy repo https://github.com/knqyf263/trivy-ci-test
-```{{execute}}
+```
 
 ### Scanning the root filesystem
 
@@ -42,4 +42,4 @@ Have a look at the different options:
 
 ```
 trivy rootfs --help
-```{{execute}}
+```
