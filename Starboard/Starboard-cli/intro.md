@@ -7,8 +7,8 @@ This tutorial will focus on using the Starboard CLI.
 You can find the details in the documentation.
 
 Alternatively, Starboard also comes as Kubernetes Operator, which we explore in another tutorial:
-* Katacoda Tutorial for the Starboard Operator
-* Starboard Operator Documentation
+* [Katacoda Tutorial for the Starboard Operator](https://github.com/aquasecurity/katacoda-scenarios/tree/main/Starboard/Starboard-operator) 
+* [Starboard Operator Documentation](https://github.com/aquasecurity/starboard-operator)
 
 ## Overview
 
