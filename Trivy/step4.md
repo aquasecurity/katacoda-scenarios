@@ -1,43 +1,66 @@
-# Custom Policies
+# Misconfiguration Scan
 
-Write your own policies in Rego to scan JSON, YAML, HCL, etc.
+Trivy provides built-in policies to detect configuration issues in Docker, Kubernetes and Terraform. Also, you can write your own policies in Rego to scan JSON, YAML, HCL, etc.
 
-### Compare multiple values from different files
+Rego is 
+It basically allows you to define rules such as:
+* Never allow the latest tag on container images
+* Every pod needs to have its resource limits defined
 
-We have the following deployment.yaml file and service.yaml file. Both files have some values such as the port in common. 
+### Scan your IaC files
+
+Trivy can scan your IaC files for misconfigurations. 
+
+You can scan either:
+* An entire directory with multiple different types of IaC configurations e.g. Dockerfile and Terraform
+* Specify a specific configuration file
+
+The following command will check all IaC files in the repository at once:
 
 ```
-cat ./assets/examples/misconf/combine/configs/deployment.yaml
+trivy config [PATH_TO_CONFIG_FILES]
+```
+
+Try it out with our example:
+
+```
+trivy config ./assets/examples/misconf/mixed/configs
 ```{{execute}}
 
+And again, you can filter by the severity of the misconfiguration:
+
 ```
-cat ./assets/examples/misconf/combine/configs/service.yaml
+trivy config --severity HIGH,CRITICAL ./assets/examples/misconf/mixed/configs
 ```{{execute}}
 
-By setting the "combine": true flag, we can compare both files with Trivy.
-This is done in the following custom policy example:
+While the `fs` command scans language-specific filesystems, the `config` command will scan either specific IaC configuration files such as Dockefile but also directories containing multiple different configuration files such as Terraform and Dockerfile etc.
+
+### Scan your Dockerfile for misconfigurations
+
+Vulnerabilities can be introduced early into our workflow. Before deploying our containerised workloads, we want to make sure that the Dockerfile does not introduce any vulnerabilities.
+
+Here is the Dockerfile that we are going to scan:
 
 ```
-cat ./assets/examples/misconf/combine/policy/custom.rego
+cat ./assets/examples/misconf/mixed/configs/Dockerfile
 ```{{execute}}
 
-And when we run the trivy command, we can see that the service selector does not match the pod label
+The cat command will just display the content of the file in the terminal.
+
+Let's scan this dockerfile:
 
 ```
-trivy conf --severity CRITICAL --policy ./assets/examples/misconf/combine/policy --namespaces user ./assets/examples/misconf/combine/configs
+trivy config ./assets/examples/misconf/mixed/configs/Dockerfile
 ```{{execute}}
 
-### Further examples with custom policies
+### Scan your Terraform configuration files for misconfigurations
 
-In many cases, you want to make sure that only certain values are included in your configuration files.
+"Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files." [Source](https://www.terraform.io/)
 
-For instance, in the following example, we want to make sure that certain ports are not exposed, this is done through the following files:
+Scanning our infrastructure for vulnerabilities and misconfigurations before deploying it is very powerful.
+
+You can scan your terraform resources through the same command by specifying the directory with your terraform configuration files:
 
 ```
-cat ./assets/examples/misconf/custom-data/policy/custom.rego ./assets/examples/misconf/custom-data/data/ports.yaml
-```{{execute}}
-
-We can then test our IaC resources for misconfiguration and whether or not any prohibited ports have been included:
-```
-trivy conf --severity HIGH,CRITICAL --policy ./assets/examples/misconf/custom-data/policy --data data --namespaces user ./assets/examples/misconf/custom-data/configs
+trivy conf ./assets/examples/misconf/mixed/configs/terraform
 ```{{execute}}

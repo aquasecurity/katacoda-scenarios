@@ -1,45 +1,71 @@
-# Misconfiguration Scan
+# Scanning files and directories
 
-Trivy provides built-in policies to detect configuration issues in Docker, Kubernetes and Terraform. Also, you can write your own policies in Rego to scan JSON, YAML, HCL, etc.
+## Scan local filesystem
 
-### Scan your IaC files
+With Trivy, you can also scan local projects including language-specific files.
 
-Trivy can scan your IaC files for misconfigurations. 
-
-You can scan either:
-* An entire directory with multiple different types of IaC configurations e.g. Dockerfile and Terraform
-* Specify a specific configuration file
-
-The following command will check all IaC files in the repository at once:
+This is done with the following command:
 
 ```
-trivy config ./assets/examples/misconf/mixed/configs
+trivy fs [PATH-TO-YOUR-File]
+```
+
+In this example, we are going to use the go-app from the examples section in the Trivy repository, which is stored in this environment within the `assets` directory:
+
+```
+trivy fs ./assets/examples/misconf/go-testing
 ```{{execute}}
 
-Filter by the severity of the misconfiguration:
+And again, you can use flags to filter for different information such as the severity of the vulnerabilities: 
 
 ```
-trivy conf --severity HIGH,CRITICAL ./assets/examples/misconf/mixed/configs
+trivy fs --severity HIGH,CRITICAL ./assets/examples/misconf/go-testing
 ```{{execute}}
 
-### Scan your Dockerfile for misconfigurations
+## Scan Misconfigurations and Vulnerabilities 
 
-Vulnerabilities can be introduced early into our workflow. Before deploying our containerised workloads, we want to make sure that the Dockerfile does not introduce any vulnerabilities.
-
-Here is the Dockerfile that we are going to scan:
+You might have notices that the fs command only displays a list of vulnerabilities. However, you can check your filesystem for vulnerabilities and also misconfigurations by adding an additional flag:
 
 ```
-cat ./assets/examples/misconf/mixed/configs/Dockerfile
+trivy fs --security-checks config ./assets/examples/misconf/go-testing
 ```{{execute}}
 
-Let's scan it:
+## Scan remote repository
+
+In many cases, we actually want to use someone else's repository for our own work. However, there are many risks involved in using just any repository.
+
+With Trivy, you can scan a Git Repository. This is done with the `trivy repo` command:
 
 ```
-trivy conf ./assets/examples/misconf/mixed/configs/Dockerfile
+trivy repo [URL_TO_REPOSITORY]
+```
+
+In our example, we are going to check the following repository for vulneratbilities:
+
+```
+trivy repo https://github.com/knqyf263/trivy-ci-test
 ```{{execute}}
 
-### Scan your Terraform configuration files for misconfigurations
+**TASK**: Try it out with one of your Git repositories or your favourite open source poject
 
 ```
-trivy conf ./assets/examples/misconf/mixed/configs/terraform
+trivy repo [URL_TO_REPOSITORY]
+```{{copy}}
+
+## Scanning the root filesystem
+
+With Trivy you can also scan a root filesystem (such as a host machine, a virtual machine image, or an unpacked container image filesystem).
+
+This is done with the following command:
+
+`trivy rootfs /path/to/rootfs`
+
+```
+trivy rootfs ../
+```{{execute}}
+
+Have a look at the different options:
+
+```
+trivy rootfs --help
 ```{{execute}}

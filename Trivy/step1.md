@@ -2,12 +2,15 @@
 
 You can find all installation options in the [documentation](https://aquasecurity.github.io/trivy/v0.23.0/getting-started/installation/).
 
-We are going to use the Ubuntu-based installation for this example.
+We are going to use the Ubuntu-based installation for this example. Upon starting the scenario, the following commands got executed in a script inside the terminal:
 
-Trivy has already been installed on this katacoda example upon starting the scenario.
+```
+cat foreground.sh
+```
 
-Make sure everything works:
+Trivy should now be ready to go in your katacoda environment.
 
+You can make sure that everything works through checking the Trivy version:
 ```
 trivy --version
 ```{{execute}}
