@@ -6,7 +6,7 @@ Trivy can do two main things, checking for vulnerabilities and for misconfigurat
 
 If you are using containers, it is very likely that you are using other people's images form container registies.
 
-For example, we can find node images on the Docker Hub: 
+For example, we can find node images on the Docker Hub: https://hub.docker.com/_/node
 
 To check a container image for vulnerabilities, we can run:
 

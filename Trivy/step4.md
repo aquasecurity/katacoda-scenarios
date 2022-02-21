@@ -2,7 +2,8 @@
 
 Trivy provides built-in policies to detect configuration issues in Docker, Kubernetes and Terraform. Also, you can write your own policies in Rego to scan JSON, YAML, HCL, etc.
 
-Rego is 
+"Rego was inspired by Datalog, which is a well understood, decades old query language. Rego extends Datalog to support structured document models such as JSON." [Source](https://www.openpolicyagent.org/docs/latest/policy-language/)
+
 It basically allows you to define rules such as:
 * Never allow the latest tag on container images
 * Every pod needs to have its resource limits defined
@@ -62,5 +63,5 @@ Scanning our infrastructure for vulnerabilities and misconfigurations before dep
 You can scan your terraform resources through the same command by specifying the directory with your terraform configuration files:
 
 ```
-trivy conf ./assets/examples/misconf/mixed/configs/terraform
+trivy config ./assets/examples/misconf/mixed/configs/terraform
 ```{{execute}}
